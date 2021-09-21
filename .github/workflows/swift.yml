@@ -19,11 +19,13 @@ jobs:
       with:
         name: build
         path: DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGit.app
+#             DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGit.app
     - name: Upload runner
       uses: actions/upload-artifact@v1
       with:
         name: runner
         path: DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGitUITests-Runner.app
+#             DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGitUITests-Runner.app
         
   unitTests:
     needs: build
