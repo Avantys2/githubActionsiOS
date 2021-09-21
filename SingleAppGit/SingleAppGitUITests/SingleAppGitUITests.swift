@@ -22,7 +22,9 @@ class SingleAppGitUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testUIExample1() throws { }
+    func testUIExample1() throws {
+        XCTFail("Fail request ;)")
+    }
     func testUIExample2() throws { }
     func testUIExample3() throws { }
 }
