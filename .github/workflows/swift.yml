@@ -9,7 +9,10 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
-    - name: install bundle
-      run: bundle install
+    - name: Setup bundle script
+      run:  |
+        gem install bundler
+        gem update bundler
+        bundle install
     - name: Run tests
       run: bundle exec faslane testLane
