@@ -18,12 +18,12 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: build
-        path: derivedData/Build/Products/Debug-iphonesimulator/SingleAppGit.app
+        path: DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGit.app
     - name: Upload runner
       uses: actions/upload-artifact@v1
       with:
         name: runner
-        path: derivedData/Build/Products/Debug-iphonesimulator/SingleAppGitUITests-Runner.app
+        path: DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGitUITests-Runner.app
         
   unitTests:
     needs: build
@@ -34,7 +34,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: build
-        path: derivedData/Build/Products/Debug-iphonesimulator/SingleAppGit.app
+        path: DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGit.app
     - name: Run unit tests
       run: |
         cd SingleAppGit
@@ -49,12 +49,12 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: build
-        path: derivedData/Build/Products/Debug-iphonesimulator/SingleAppGit.app
+        path: DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGit.app
     - name: Download runner
       uses: actions/upload-artifact@v1
       with:
         name: runner
-        path: derivedData/Build/Products/Debug-iphonesimulator/SingleAppGitUITests-Runner.app
+        path: DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGitUITests-Runner.app
     - name: Run UI tests
       run: |
         cd SingleAppGit
