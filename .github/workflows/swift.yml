@@ -15,13 +15,13 @@ jobs:
         bundle install
         bundle exec fastlane buildLane
     - name: Upload build
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v2
       with:
         name: build
         path: DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGit.app
 #             DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGit.app
     - name: Upload runner
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v2
       with:
         name: runner
         path: DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGitUITests-Runner.app
@@ -33,7 +33,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Download build results
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v2
       with:
         name: build
         path: DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGit.app
@@ -48,12 +48,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Download build results
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v2
       with:
         name: build
         path: DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGit.app
     - name: Download runner
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v2
       with:
         name: runner
         path: DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGitUITests-Runner.app
