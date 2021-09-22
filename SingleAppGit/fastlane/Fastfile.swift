@@ -12,7 +12,7 @@ class Fastfile: LaneFile {
 	func buildLane() {
         desc("Build for testing")
         scan(
-            derivedDataPath: "DerivedData",
+            derivedDataPath: .fastlaneDefault("derivedData"),
             buildForTesting: .fastlaneDefault(true)
         )
 	}
@@ -21,7 +21,7 @@ class Fastfile: LaneFile {
         desc("Run Unit-tests")
         scan(
             onlyTesting: "SingleAppGitTests",
-            derivedDataPath: "DerivedData",
+            derivedDataPath: .fastlaneDefault("derivedData"),
             testWithoutBuilding: .fastlaneDefault(true)
         )
     }
@@ -30,7 +30,7 @@ class Fastfile: LaneFile {
         desc("Run UI-tests")
         scan(
             onlyTesting: "SingleAppGitUITests",
-            derivedDataPath: "DerivedData",
+            derivedDataPath: .fastlaneDefault("derivedData"),
             testWithoutBuilding: .fastlaneDefault(false)
         )
     }
