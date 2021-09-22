@@ -19,13 +19,11 @@ jobs:
       with:
         name: build
         path: DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGit.app
-#             DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGit.app
-    - name: Upload runner
-      uses: actions/upload-artifact@v2
-      with:
-        name: runner
-        path: DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGitUITests-Runner.app
-#             DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGitUITests-Runner.app
+#     - name: Upload runner
+#       uses: actions/upload-artifact@v2
+#       with:
+#         name: runner
+#         path: DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGitUITests-Runner.app
         
   unitTests:
     needs: build
@@ -42,22 +40,22 @@ jobs:
         cd SingleAppGit
         bundle exec fastlane unitTestLane
         
-  uiTests:
-    needs: build
-    runs-on: macos-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Download build results
-      uses: actions/upload-artifact@v2
-      with:
-        name: build
-        path: DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGit.app
-    - name: Download runner
-      uses: actions/upload-artifact@v2
-      with:
-        name: runner
-        path: DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGitUITests-Runner.app
-    - name: Run UI tests
-      run: |
-        cd SingleAppGit
-        bundle exec fastlane uiTestLane
+#   uiTests:
+#     needs: build
+#     runs-on: macos-latest
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Download build results
+#       uses: actions/upload-artifact@v2
+#       with:
+#         name: build
+#         path: DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGit.app
+#     - name: Download runner
+#       uses: actions/upload-artifact@v2
+#       with:
+#         name: runner
+#         path: DerivedData/Build/Products/Debug-iphonesimulator/SingleAppGitUITests-Runner.app
+#     - name: Run UI tests
+#       run: |
+#         cd SingleAppGit
+#         bundle exec fastlane uiTestLane
